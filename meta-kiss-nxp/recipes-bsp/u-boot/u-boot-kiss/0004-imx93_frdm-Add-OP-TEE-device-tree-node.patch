@@ -1,0 +1,36 @@
+From 4d2323ccb40c95eee00f6db95a7e02891fe532ef Mon Sep 17 00:00:00 2001
+From: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+Date: Mon, 6 Jul 2026 14:23:49 +0200
+Subject: [PATCH] imx93_frdm: Add OP-TEE device tree node
+
+Add missing firmware/optee node, so is can be both used and copied into
+Linux device tree by optee_copy_firmware_node(). This is consistent with
+other i.MX93 boards.
+
+Upstream-Status: Submitted [https://lore.kernel.org/r/20260706-master-v1-1-25bae88d130a@bootlin.com]
+Signed-off-by: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+---
+ arch/arm/dts/imx93-11x11-frdm-u-boot.dtsi | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm/dts/imx93-11x11-frdm-u-boot.dtsi b/arch/arm/dts/imx93-11x11-frdm-u-boot.dtsi
+index 41111b1a95a2..2ce9f46b2ad8 100644
+--- a/arch/arm/dts/imx93-11x11-frdm-u-boot.dtsi
++++ b/arch/arm/dts/imx93-11x11-frdm-u-boot.dtsi
+@@ -12,6 +12,13 @@
+ 		bootph-pre-ram;
+ 		bootph-some-ram;
+ 	};
++
++	firmware {
++		optee {
++			compatible = "linaro,optee-tz";
++			method = "smc";
++		};
++	};
+ };
+ 
+ &A55_0 {
+-- 
+2.47.3
+
