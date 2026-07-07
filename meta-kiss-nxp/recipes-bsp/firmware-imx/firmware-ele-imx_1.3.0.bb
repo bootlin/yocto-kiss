@@ -13,11 +13,11 @@ NXP_FIRMWARE_ARCHIVE = "firmware-ele-imx-${PV}-${IMX_SRCREV_ABBREV}.bin"
 SRC_URI = "https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/${NXP_FIRMWARE_ARCHIVE};fsl-eula=true"
 SRC_URI[sha256sum] = "8791109824767346237e53ac2c712824e54608e2092859161e6bb3e5385a7595"
 
-S = "${WORKDIR}/firmware-ele-imx-${PV}-${IMX_SRCREV_ABBREV}"
+S = "${UNPACKDIR}/firmware-ele-imx-${PV}-${IMX_SRCREV_ABBREV}"
 
 python do_unpack:append() {
     cmd = "sh %s --auto-accept --force" % d.getVar('NXP_FIRMWARE_ARCHIVE')
-    bb.process.run(cmd, shell=True, cwd=d.getVar('WORKDIR', True))
+    bb.process.run(cmd, shell=True, cwd=d.getVar('UNPACKDIR'))
 }
 
 do_install() {

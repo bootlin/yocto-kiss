@@ -14,13 +14,13 @@ SRC_URI = "https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/${NXP_FIRMWARE_ARCHIVE};fsl
 SRC_URI[sha256sum] = "61f925e606ab020b1a36f3f7f7e459c6847f5b9dbc79421f9ef86e8fc124eb2f"
 
 IMX_SRCREV_ABBREV = "5af0ceb"
-S = "${WORKDIR}/firmware-imx-${PV}-${IMX_SRCREV_ABBREV}"
+S = "${UNPACKDIR}/firmware-imx-${PV}-${IMX_SRCREV_ABBREV}"
 
 inherit deploy nopackages
 
 python do_unpack:append() {
     cmd = "sh %s --auto-accept --force" % d.getVar('NXP_FIRMWARE_ARCHIVE')
-    bb.process.run(cmd, shell=True, cwd=d.getVar('WORKDIR', True))
+    bb.process.run(cmd, shell=True, cwd=d.getVar('UNPACKDIR'))
 }
 
 do_deploy() {

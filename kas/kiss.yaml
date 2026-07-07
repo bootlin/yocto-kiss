@@ -7,19 +7,19 @@ target: kiss-image
 repos:
   bitbake:
     url: "https://git.openembedded.org/bitbake"
-    branch: "2.8"
+    branch: "2.18"
     layers:
       .: disabled
 
   openembedded-core:
     url: "https://git.openembedded.org/openembedded-core"
-    branch: scarthgap
+    branch: wrynose
     layers:
       meta:
 
   meta-arm:
     url: "https://git.yoctoproject.org/meta-arm"
-    branch: scarthgap
+    branch: wrynose
     layers:
       meta-arm-toolchain:
       meta-arm:

@@ -15,15 +15,13 @@ EXTRA_OEMAKE:append:freiheit93 = " BINMAN_INDIRS=${RECIPE_SYSROOT}/firmware"
 
 do_configure:append:freiheit93() {
     # Copy tfa, tee and ele firmware binaries in build directory, so they can be found by mkimage
-    config="${@ d.getVar('UBOOT_MACHINE').strip()}"
-    cp ${STAGING_DIR_HOST}/firmware/bl31.bin ${B}/${config}/
-    cp ${STAGING_DIR_HOST}/${nonarch_base_libdir}/firmware/tee-raw.bin ${B}/${config}/tee.bin
-    cp ${STAGING_DIR_HOST}/${nonarch_base_libdir}/firmware/imx/ele/${SECO_FIRMWARE_NAME} ${B}/${config}/
+    cp ${STAGING_DIR_HOST}/firmware/trusted-firmware-a/bl31.bin ${KCONFIG_CONFIG_ROOTDIR}/
+    cp ${STAGING_DIR_HOST}/${nonarch_base_libdir}/firmware/tee-raw.bin ${KCONFIG_CONFIG_ROOTDIR}/tee.bin
+    cp ${STAGING_DIR_HOST}/${nonarch_base_libdir}/firmware/imx/ele/${SECO_FIRMWARE_NAME} ${KCONFIG_CONFIG_ROOTDIR}/
 }
 
 do_deploy:append:freiheit93() {
-    config="${@ d.getVar('UBOOT_MACHINE').strip()}"
-    install -m 0644 ${B}/${config}/flash.bin  ${DEPLOYDIR}/flash.bin
+    install -m 0644 ${KCONFIG_CONFIG_ROOTDIR}/flash.bin  ${DEPLOYDIR}/flash.bin
 
     # From meta-freescale uuu_bootloader_tag.bbclass
     # Create a tagged boot partition file for the SD card image file. The tag

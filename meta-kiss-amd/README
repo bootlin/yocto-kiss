@@ -9,18 +9,18 @@ Dependencies
   Internal dependency on meta-kiss layer
 
   URI: https://git.openembedded.org/meta-openembedded.git
-  branch: scarthgap
+  branch: wrynose
   Dependency on meta-oe and meta-python to build the ZynqMP FSBL
 
   URI: https://github.com/Xilinx/meta-xilinx.git
-  branch: scarthgap
+  branch: wrynose
   Dependency on meta-microblaze to build the ZynqMP FSBL
 
   URI: https://git.openembedded.org/openembedded-core
-  branch: scarthgap
+  branch: wrynose
 
   URI: git://git.yoctoproject.org/meta-arm
-  branch: scarthgap
+  branch: wrynose
 
 Patches
 =======
