@@ -14,7 +14,7 @@ inherit kernel
 MAJOR_VER = "${@d.getVar('PV').split('.')[0]}"
 SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v${MAJOR_VER}.x/linux-${PV}.tar.xz"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
-S = "${WORKDIR}/linux-${PV}"
+S = "${UNPACKDIR}/linux-${PV}"
 
 # For most realistic setups, a customized defconfig is preferred to the default
 # architecture defconfig, to enable all the needed features and drivers while

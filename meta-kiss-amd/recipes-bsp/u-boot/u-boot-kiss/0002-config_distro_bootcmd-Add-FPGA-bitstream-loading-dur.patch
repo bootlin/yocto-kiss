@@ -16,6 +16,7 @@ configuration is discovered and executed.
 The FPGA loading is non-blocking - if no fpga.bit file is found, the
 boot process continues normally with extlinux/script launch.
 
+Upstream-Status: Inappropriate [meta-kiss specific]
 Signed-off-by: Kory Maincent <kory.maincent@bootlin.com>
 ---
  include/config_distro_bootcmd.h | 23 +++++++++++++++++++++++
