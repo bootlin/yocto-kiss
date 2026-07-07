@@ -1,3 +1,0 @@
-bootloader --ptable=msdos
-
-part / --source rootfs --ondisk mmcblk --fstype=ext4 --label root
