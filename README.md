@@ -32,7 +32,8 @@ This repository is composed of:
  * `meta-kiss-ti`: machine-specific layer for the dogbonedark board
  * `meta-kiss-st`: machine-specific layer for the stompduck board
  * `meta-kiss-nxp`: machine-specific layer for the freiheit93 board
- * `meta-kiss-amd`: machine-specific layer for the krazymp board
+ * `meta-kiss-amd`: machine-specific layer for the krazymp board (scarthgap
+   branch only)
 
 The kas configuration files use the [kas](https://kas.readthedocs.io/)
 utility, which allows to easily download all the required third-party
@@ -167,6 +168,9 @@ ZynqMP devices boot. Its purpose is to demonstrate how a complex boot flow
 can be implemented in a customized and straightforward way, without relying
 on third-party tools too much.
 
+Due to dependencies on meta-kiss-amd, this machine is only supported on the
+scarthgap branch so far.
+
 # How do I use it?
 
 The kas configuration files are modular: a base configuration (`kas/kiss.yaml`)
@@ -191,6 +195,7 @@ kas build kas/kiss.yaml:kas/freiheit93.yaml
 # Or build for the krazymp board
 # sdtgen licenses are accepted by default in kas/freiheit93.yaml but you should
 # read them beforehand
+git checkout scarthgap
 kas build kas/kiss.yaml:kas/krazymp.yaml
 
 # Have dinner
