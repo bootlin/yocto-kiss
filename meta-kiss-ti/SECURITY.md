@@ -1,0 +1,1 @@
+../meta-kiss/SECURITY.md
