@@ -10,4 +10,4 @@ repos:
 
 local_conf_header:
   meta-kiss-nxp: |
-    LICENSE_FLAGS_ACCEPTED += "NXP_EULA_v57 NXP_EULA_v58"
+    OE_FRAGMENTS += 'meta-kiss-nxp/licenses'
