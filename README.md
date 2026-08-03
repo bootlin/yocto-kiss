@@ -203,22 +203,23 @@ ls -l build/tmp-glibc/deploy/images/dogbonedark/
 sudo bmaptool copy build/tmp-glibc/deploy/images/dogbonedark/kiss-image-dogbonedark.rootfs.wic /dev/XYZ
 ```
 
-## Alternative: Using bitbake directly
+## Alternative: Using bitbake-setup
 
 If you prefer to use `bitbake` directly instead of `kas build`:
 
 ```bash
-# First, use kas to checkout the required repositories:
-kas checkout kas/kiss.yaml:kas/dogbonedark.yaml
+# You will need bitbake-setup, coming either from bitbake git or pypi.org.
+pip install bitbake-setup
 
-# Then initialize the build environment:
-. openembedded-core/oe-init-build-env
+# First, use bitbake-setup to checkout the required repositories:
+bitbake-setup init https://raw.githubusercontent.com/bootlin/yocto-kiss/refs/heads/wrynose/yocto-kiss.conf.json
+
+# Select the configuration you want to build throught bitbake-setup menu, then
+# source the corresponding environment:
+. bitbake-builds/kiss-wrynose/build/init-build-env
 
 # Now you can use bitbake as usual:
 bitbake kiss-image
-
-# To switch machines, update conf/site.conf or your shell environment:
-echo 'MACHINE = "stompduck"' >> conf/site.conf
 ```
 
 # That's all!
