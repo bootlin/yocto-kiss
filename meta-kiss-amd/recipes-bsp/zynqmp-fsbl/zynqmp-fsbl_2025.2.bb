@@ -7,8 +7,6 @@ SRCREV = "145cea8fcf98268c8b163f732c181f008e887e53"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSES/MIT;md5=e8f57dd048e186199433be2c41bd3d6d"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "xsa-native sdtgen-native lopper-native python3-pyyaml-native \
 	   python3-humanfriendly-native python3-ruamel-yaml-native \
 	   python3-anytree-native dtc-native ninja-native"

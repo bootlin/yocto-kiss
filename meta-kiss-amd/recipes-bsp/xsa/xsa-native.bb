@@ -15,6 +15,6 @@ do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${localstatedir}/xsa
-	cp ${WORKDIR}/system.xsa ${D}${localstatedir}/xsa/system.xsa
+	cp ${UNPACKDIR}/system.xsa ${D}${localstatedir}/xsa/system.xsa
 }
 FILES:${PN} = "${localstatedir}/xsa/system.xsa"
