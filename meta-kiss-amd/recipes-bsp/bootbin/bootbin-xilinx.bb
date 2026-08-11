@@ -58,3 +58,6 @@ do_deploy() {
 	ln -sf ${BOOTBIN_BASE_NAME}.bin ${DEPLOYDIR}/boot.bin
 }
 addtask deploy after do_install before do_build
+
+# ZynqMP FSBL contains reference to TMPDIR
+INSANE_SKIP:${PN} += "buildpaths"
