@@ -9,7 +9,7 @@ Without additional delay i2c failures are observed
 on our boards.
 
 Signed-off-by: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@amd.com>
-Upstream-Status: pending
+Upstream-Status: Pending
 ---
  common/usb_onboard_hub.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
