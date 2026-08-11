@@ -5,9 +5,9 @@ BRANCH = "xlnx_rel_v${PV}"
 SRCREV = "145cea8fcf98268c8b163f732c181f008e887e53"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSES/MIT;md5=e8f57dd048e186199433be2c41bd3d6d"
+LIC_FILES_CHKSUM = "file://${UNPACKDIR}/${BP}/LICENSES/MIT;md5=e8f57dd048e186199433be2c41bd3d6d"
 
-S = "${WORKDIR}/git/lib/sw_apps/zynqmp_pmufw/src"
+S = "${UNPACKDIR}/${BP}/lib/sw_apps/zynqmp_pmufw/src"
 
 CFLAGS += "-Os -flto -ffat-lto-objects"
 

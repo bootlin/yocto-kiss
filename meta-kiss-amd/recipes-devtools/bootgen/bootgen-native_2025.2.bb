@@ -13,8 +13,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=04054e01a445f223956a47542277e6ad"
 
 DEPENDS += "openssl-native"
 
-S = "${WORKDIR}/git"
-
 do_install() {
     install -d ${D}${bindir}
     install -Dm 0755 ${S}/build/bin/bootgen ${D}${bindir}

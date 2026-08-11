@@ -38,7 +38,7 @@ do_compile() {
 	cp ${DEPLOY_DIR_IMAGE}/bl31.elf ${B}/bl31.elf
 	cp ${DEPLOY_DIR_IMAGE}/u-boot.elf ${B}/u-boot.elf
 	cp ${DEPLOY_DIR_IMAGE}/u-boot.dtb ${B}/u-boot.dtb
-	bootgen -image ${WORKDIR}/bootgen.bif -arch zynqmp -w -o ${B}/boot.bin
+	bootgen -image ${UNPACKDIR}/bootgen.bif -arch zynqmp -w -o ${B}/boot.bin
 }
 
 do_install() {
