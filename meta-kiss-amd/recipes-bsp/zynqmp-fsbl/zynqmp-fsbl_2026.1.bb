@@ -2,14 +2,14 @@ SUMMARY = "Building and installing ZynqMP fsbl"
 
 SRC_URI = "git://github.com/Xilinx/embeddedsw.git;protocol=https;branch=${BRANCH}"
 BRANCH = "xlnx_rel_v${PV}"
-SRCREV = "145cea8fcf98268c8b163f732c181f008e887e53"
+SRCREV = "e505905bc62ec34ad6e0112ef484c332a5532415"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSES/MIT;md5=e8f57dd048e186199433be2c41bd3d6d"
 
 DEPENDS = "xsa-native sdtgen-native lopper-native python3-pyyaml-native \
 	   python3-humanfriendly-native python3-ruamel-yaml-native \
-	   python3-anytree-native dtc-native ninja-native"
+	   python3-anytree-native python3-dtc-native dtc-native ninja-native"
 
 do_configure() {
 	${STAGING_DIR_NATIVE}${bindir}/vitis/bin/sdtgen \

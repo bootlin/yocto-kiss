@@ -6,11 +6,11 @@ inherit native
 
 BRANCH = "xlnx_rel_v${PV}"
 SRC_URI = " \
-	https://edf.amd.com/sswreleases/rel-v${PV}/xsct-trim/xsct-2025-2_1110.tar.xz \
+	https://edf.amd.com/sswreleases/rel-v${PV}/xsct-trim/xsct-2026-1_0604.tar.xz \
 	git://github.com/Xilinx/system-device-tree-xlnx.git;protocol=https;branch=${BRANCH};name=system-device-tree-xlnx;subdir=Vitis/${PV}/data/system-device-tree-xlnx \
 "
-SRC_URI[sha256sum] = "3ae9e4cd07e179a016467d6eb743d04a389af9857a1c72c8c6104cfc47fca823"
-SRCREV_system-device-tree-xlnx = "d97e6c72b1af891bc9de2703730d2cbb2044c1e3"
+SRC_URI[sha256sum] = "ee79d756ef2820025b849508f083eec71027265e5ba8852e6c4094ccb0e8f195"
+SRCREV_system-device-tree-xlnx = "af0bf525f0b466b6266cfd92ef6fccd92ebed84e"
 
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = " \
