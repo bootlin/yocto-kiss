@@ -30,9 +30,6 @@ repos:
 
 local_conf_header:
   meta-kiss: |
-    # Some useful lines you may want to copy to your site.conf for development
+    # Some useful lines you may want to copy to your local.conf for development
     # INHERIT += "rm_work"
-    # EXTRA_IMAGE_FEATURES += "empty-root-password \
-    #                          allow-empty-password \
-    #                          allow-root-login \
-    #                          "
+    # OE_FRAGMENTS += 'core/yocto/root-login-with-empty-password'
