@@ -248,3 +248,16 @@ In the end we hope you like the advantages of this clean setup:
    machine-specific layers, documentation included, not including the kernel
    defconfigs
  * and, most important, readable code -- at least we hope so!
+
+# Contributions
+
+Yocto-kiss is mostly meant to be an example layer: we only want to support a
+limited set of features on a few boards. If you need more, it likely means you
+should create your own layer.
+
+Still, we do accept third-party contributions.
+
+Pull requests and code review are done through GitHub. You can open a new
+pull-request on <https://github.com/bootlin/yocto-kiss/pulls>.
+
+Bugs can be reported through GitHub bug tracker: <https://github.com/bootlin/yocto-kiss/issues>.
