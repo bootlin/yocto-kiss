@@ -1,0 +1,122 @@
+{
+    "description": "yocto-kiss - An example of the simplest, but realistic and working, Yocto/OpenEmbedded setup.",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/bitbake",
+                "branch": "2.18",
+                "rev": "2.18"
+            }
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-yocto",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-arm": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-arm",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-kiss": {
+            "git-remote": {
+                "uri": "https://github.com/bootlin/yocto-kiss.git",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-openembedded": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/meta-openembedded.git",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-xilinx": {
+            "git-remote": {
+                "uri": "https://github.com/Xilinx/meta-xilinx.git",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+        {
+            "bb-layers": ["openembedded-core/meta", "meta-yocto/meta-yocto-bsp", "meta-yocto/meta-poky", "meta-arm/meta-arm-toolchain", "meta-arm/meta-arm", "meta-kiss/meta-kiss"],
+            "setup-dir-name": "kiss-wrynose",
+            "oe-fragments": ["distro/kiss"],
+            "configurations": [
+            {
+                "name": "dogbonedark",
+                "description": "A fictitious product which in reality implements the BeagleBone Black",
+                "oe-fragments": ["machine/dogbonedark"],
+                "bb-layers": ["meta-kiss/meta-kiss-ti"],
+                "setup-dir-name": "-dogbonedark"
+            },
+            {
+                "name": "dogbonedark-dev",
+                "description": "A fictitious product which in reality implements the BeagleBone Black (insecure)",
+                "oe-fragments": ["machine/dogbonedark", "core/yocto/root-login-with-empty-password"],
+                "bb-layers": ["meta-kiss/meta-kiss-ti"],
+                "setup-dir-name": "-dogbonedark-dev"
+            },
+            {
+                "name": "freiheit93",
+                "description": "A fictitious product which in reality implements the NXP FRDM i.MX93",
+                "oe-fragments": ["machine/freiheit93", "meta-kiss-nxp/licenses"],
+                "bb-layers": ["meta-kiss/meta-kiss-nxp"],
+                "setup-dir-name": "-freiheit93"
+            },
+            {
+                "name": "freiheit93-dev",
+                "description": "A fictitious product which in reality implements the NXP FRDM i.MX93 (insecure)",
+                "oe-fragments": ["machine/freiheit93", "meta-kiss-nxp/licenses", "core/yocto/root-login-with-empty-password"],
+                "bb-layers": ["meta-kiss/meta-kiss-nxp"],
+                "setup-dir-name": "-freiheit93-dev"
+            },
+            {
+                "name": "krazymp",
+                "description": "A fictitious product which in reality implements the ZynqMP Kria KD240",
+                "oe-fragments": ["machine/krazymp"],
+                "bb-layers": ["meta-kiss/meta-kiss-amd", "meta-xilinx/meta-microblaze", "meta-openembedded/meta-oe", "meta-openembedded/meta-python"],
+                "setup-dir-name": "-krazymp"
+            },
+            {
+                "name": "krazymp-dev",
+                "description": "A fictitious product which in reality implements the ZynqMP Kria KD240 (insecure)",
+                "oe-fragments": ["machine/krazymp", "core/yocto/root-login-with-empty-password"],
+                "bb-layers": ["meta-kiss/meta-kiss-amd", "meta-xilinx/meta-microblaze", "meta-openembedded/meta-oe", "meta-openembedded/meta-python"],
+                "setup-dir-name": "-krazymp-dev"
+            },
+            {
+                "name": "stompduck",
+                "description": "A fictitious product which in reality implements the STM32MP157A-DK1",
+                "oe-fragments": ["machine/stompduck"],
+                "bb-layers": ["meta-kiss/meta-kiss-st"],
+                "setup-dir-name": "-stompduck"
+            },
+            {
+                "name": "stompduck-dev",
+                "description": "A fictitious product which in reality implements the STM32MP157A-DK1 (insecure)",
+                "oe-fragments": ["machine/stompduck", "core/yocto/root-login-with-empty-password"],
+                "bb-layers": ["meta-kiss/meta-kiss-st"],
+                "setup-dir-name": "-stompduck-dev"
+            }
+            ]
+        }
+        ]
+    },
+    "version": "1.0"
+}
